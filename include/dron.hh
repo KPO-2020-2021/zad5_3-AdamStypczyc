@@ -19,7 +19,7 @@
  * \param kat kat położenia drona
  * \param index numer drona
  */
-class dron : public ObiektSceny, public std::enable_shared_from_this<Graniastoslup>
+class dron : public ObiektSceny, public std::enable_shared_from_this<dron>
 {
     double kat, r;
     int index;
@@ -78,6 +78,7 @@ dron::dron(int ind, PzG::LaczeDoGNUPlota &Lacze1, Wektor3D polozenie) : Lacze(La
         Lacze.DodajNazwePliku(rotor_orginal[i].pokaz_nazwa().c_str());
     }
     korpus = korpus_orginal;
+    r = korpus.promien();
 
     korpus.translacja(polozenie);
     for (int i = 0; i < 4; ++i)
@@ -199,6 +200,7 @@ void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elem
     switch (wybor)
     {
     case 'o':
+    {
         std::cout << "Podaj kąt o jaki ma się obrócić dron" << std::endl;
         while (1)
         {
@@ -248,8 +250,10 @@ void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elem
                 usleep(15000);
             }
         }
-        break;
+    }
+    break;
     case 't':
+    {
         std::cout << "Podaj długość drogi" << std::endl;
         while (1)
         {
@@ -355,19 +359,19 @@ void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elem
             {
                 korpus = korpus_orginal;
                 ruch_pionowy(-400);
-                if(sprawdz_czy_kolizja(*i))
+                if (sprawdz_czy_kolizja(*i))
                 {
                     std::cout << (*i)->pokaz_nazwa() << std::endl;
-                    kolizja  = true;
+                    kolizja = true;
                 }
-                korpus=korpus_orginal;
+                korpus = korpus_orginal;
                 ruch_pionowy(400);
             }
-            if(!kolizja)
+            if (!kolizja)
             {
                 break;
             }
-            kolizja=false;
+            kolizja = false;
             droga = 50;
             przypisz_sciezke(droga);
         }
@@ -388,8 +392,10 @@ void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elem
 
         Lacze.UsunNazwePliku("../datasets/sciezka.dat");
         Lacze.Rysuj();
-        break;
+    }
+    break;
     case 'r':
+    {
         std::cout << "Wznoszenie..." << std::endl;
         for (int i = 0; i < 400; ++i)
         {
@@ -540,9 +546,12 @@ void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elem
             usleep(15000);
         }
         Lacze.Rysuj();
-        break;
+    }
+    break;
     default:
-        break;
+    {
+    }
+    break;
     }
     std::cout << "--------------------------------------------------------" << std::endl;
     std::cout << "             Ilość stworzonych wektorów: " << Wektor3D::ilosc_stworzonych << std::endl;
@@ -613,7 +622,7 @@ int dron::pokaz_index()
 }
 bool dron::sprawdz_czy_kolizja(std::shared_ptr<ObiektSceny> Obiekt)
 {
-    std::shared_ptr<Graniastoslup> identyko = shared_from_this();
+    std::shared_ptr<dron> identyko = shared_from_this();
 
     if (Obiekt != identyko)
     {
