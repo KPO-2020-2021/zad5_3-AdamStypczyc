@@ -63,7 +63,7 @@
 class Scena
 {
     PzG::LaczeDoGNUPlota Lacze;
-    std::list<std::shared_ptr<Graniastoslup>> Elementy_powierzchni;
+    std::list<std::shared_ptr<ObiektSceny>> Elementy_powierzchni;
     std::list<std::shared_ptr<dron>> Lst_dronow;
     Wektor3D siatka[ROZMIAR][ROZMIAR];
     int index_elementu_plasko;
@@ -168,7 +168,7 @@ Scena::Scena()
     Elementy_powierzchni.push_front(std::make_shared<Plaskowyz>(tmp, 70, 70, 60, "../datasets/Elementy_powierzchni_plasko" + std::to_string(index_elementu_plasko) + ".dat"));
     index_elementu_plasko++;
 
-    for (std::list<std::shared_ptr<Graniastoslup>>::const_iterator i = Elementy_powierzchni.begin(); i != Elementy_powierzchni.end(); ++i)
+    for (std::list<std::shared_ptr<ObiektSceny>>::const_iterator i = Elementy_powierzchni.begin(); i != Elementy_powierzchni.end(); ++i)
     {
         (*i)->zapis();
         Lacze.DodajNazwePliku((*i)->pokaz_nazwa().c_str());
@@ -176,12 +176,12 @@ Scena::Scena()
 
     tmp = Wektor3D(POLOZENIE_1);
     Lst_dronow.push_front(std::make_shared<dron>(index_drona, Lacze, tmp));
-    (*Lst_dronow.begin())->zapisz();
+    (*Lst_dronow.begin())->zapis();
     index_drona++;
 
     tmp = Wektor3D(POLOZENIE_2);
     Lst_dronow.push_front(std::make_shared<dron>(index_drona, Lacze, tmp));
-    (*Lst_dronow.begin())->zapisz();
+    (*Lst_dronow.begin())->zapis();
     index_drona++;
 
     Lacze.Rysuj();
@@ -364,7 +364,7 @@ bool Scena::dzialanie()
                             start = Wektor3D({tab1[0], tab1[1], tab1[2]});
 
                             Elementy_powierzchni.push_front(std::make_shared<Plaskowyz>(start, tab[0], tab[1], tab[2], "../datasets/Elementy_powierzchni_plasko" + std::to_string(index_elementu_plasko) + ".dat"));
-                            std::list<std::shared_ptr<Graniastoslup>>::const_iterator j = Elementy_powierzchni.begin();
+                            std::list<std::shared_ptr<ObiektSceny>>::const_iterator j = Elementy_powierzchni.begin();
                             (*j)->zapis();
                             Lacze.DodajNazwePliku((*j)->pokaz_nazwa().c_str());
                             index_elementu_plasko++;
@@ -450,7 +450,7 @@ bool Scena::dzialanie()
                             start = Wektor3D({tab1[0], tab1[1], tab1[2]});
 
                             Elementy_powierzchni.push_front(std::make_shared<Ostroslup>(start, tab[0], tab[1], tab[2], "../datasets/Elementy_powierzchni_ostr" + std::to_string(index_elementu_ostr) + ".dat"));
-                            std::list<std::shared_ptr<Graniastoslup>>::const_iterator j = Elementy_powierzchni.begin();
+                            std::list<std::shared_ptr<ObiektSceny>>::const_iterator j = Elementy_powierzchni.begin();
                             (*j)->zapis();
                             Lacze.DodajNazwePliku((*j)->pokaz_nazwa().c_str());
                             index_elementu_ostr++;
@@ -536,7 +536,7 @@ bool Scena::dzialanie()
                             start = Wektor3D({tab1[0], tab1[1], tab1[2]});
 
                             Elementy_powierzchni.push_front(std::make_shared<Skarpa>(start, tab[0], tab[1], tab[2], "../datasets/Elementy_powierzchni_skr" + std::to_string(index_elementu_skr) + ".dat"));
-                            std::list<std::shared_ptr<Graniastoslup>>::const_iterator j = Elementy_powierzchni.begin();
+                            std::list<std::shared_ptr<ObiektSceny>>::const_iterator j = Elementy_powierzchni.begin();
                             (*j)->zapis();
                             Lacze.DodajNazwePliku((*j)->pokaz_nazwa().c_str());
                             index_elementu_skr++;
@@ -576,7 +576,7 @@ bool Scena::dzialanie()
                             tab[2] = 15;
                             Wektor3D start = Wektor3D({tab[0], tab[1], tab[2]});
                             Lst_dronow.push_front(std::make_shared<dron>(index_drona, Lacze, start));
-                            (*Lst_dronow.begin())->zapisz();
+                            (*Lst_dronow.begin())->zapis();
                             index_drona++;
                         }
                         break;
@@ -609,7 +609,7 @@ bool Scena::dzialanie()
             {
                 int i = 0;
                 int nr;
-                for (std::list<std::shared_ptr<Graniastoslup>>::const_iterator j = Elementy_powierzchni.begin(); j != Elementy_powierzchni.end(); ++j)
+                for (std::list<std::shared_ptr<ObiektSceny>>::const_iterator j = Elementy_powierzchni.begin(); j != Elementy_powierzchni.end(); ++j)
                 {
                     std::cout << i << " - " << (*j)->pokaz_nazwa() << " współrzędne: " << (*j)->pokaz_srodek() << std::endl;
                     i++;
@@ -636,7 +636,7 @@ bool Scena::dzialanie()
                         std::cin.ignore(1024, '\n');
                     }
                 }
-                std::list<std::shared_ptr<Graniastoslup>>::const_iterator j = Elementy_powierzchni.begin();
+                std::list<std::shared_ptr<ObiektSceny>>::const_iterator j = Elementy_powierzchni.begin();
                 for (int k = 0; k < nr; ++k)
                 {
                     j++;
@@ -726,7 +726,7 @@ bool Scena::dzialanie()
                 {
                     wsk_1++;
                 }
-                (*wsk_1)->akcja(wybor);
+                (*wsk_1)->akcja(wybor, Elementy_powierzchni);
             }
         }
     }

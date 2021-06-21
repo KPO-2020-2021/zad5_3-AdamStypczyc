@@ -253,6 +253,7 @@ CMakeFiles/main.dir/app/main.cpp.o: \
  /home/adam/zad5_3-AdamStypczyc/include/size.hh \
  /home/adam/zad5_3-AdamStypczyc/include/Prostopadloscian.hh \
  /home/adam/zad5_3-AdamStypczyc/include/Graniastoslup.hh \
+ /home/adam/zad5_3-AdamStypczyc/include/ObiektSceny.hh \
  /usr/include/c++/9/memory /usr/include/c++/9/bits/stl_raw_storage_iter.h \
  /usr/include/c++/9/ext/concurrence.h \
  /usr/include/c++/9/bits/shared_ptr.h \

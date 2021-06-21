@@ -19,9 +19,9 @@
  * \param kat kat położenia drona
  * \param index numer drona
  */
-class dron
+class dron : public ObiektSceny, public std::enable_shared_from_this<Graniastoslup>
 {
-    double kat;
+    double kat, r;
     int index;
     std::vector<Wektor3D> sciezka;
     PzG::LaczeDoGNUPlota &Lacze;
@@ -41,13 +41,18 @@ public:
     void obrot(double kat_obrotu);
     void obrot_rotorow();
 
-    void zapisz();
-    void akcja(char wybor);
+    void zapis();
+    void akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elementow);
     void przypisz_sciezke(double droga);
 
     Wektor3D pokaz_srodek() const;
 
     void usun_drona();
+
+    double promien();
+    std::string pokaz_nazwa() const;
+    int pokaz_index();
+    bool sprawdz_czy_kolizja(std::shared_ptr<ObiektSceny> Obiekt);
 };
 /*!
  * \brief Konstruktor parametryczny klasy dron.
@@ -170,7 +175,7 @@ void dron::obrot_rotorow()
 /*!
  * \brief Metoda zapisujaca drona do plików
  */
-void dron::zapisz()
+void dron::zapis()
 {
     korpus.zapis();
     for (int i = 0; i < 4; ++i)
@@ -184,13 +189,13 @@ void dron::zapisz()
  * \param droga zmienna pomocnicza do której przypisywana jest droga
  * \param kat zmienna do której użytkownik przypisuje kąt obrotu
  */
-void dron::akcja(char wybor)
+void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elementow)
 {
     double droga;
     double kat;
     int licz = 0;
     ++licz;
-    zapisz();
+    zapis();
     switch (wybor)
     {
     case 'o':
@@ -222,7 +227,7 @@ void dron::akcja(char wybor)
                 }
                 obrot(-1);
                 obrot_rotorow();
-                zapisz();
+                zapis();
                 Lacze.Rysuj();
                 usleep(15000);
             }
@@ -238,7 +243,7 @@ void dron::akcja(char wybor)
                 }
                 obrot(1);
                 obrot_rotorow();
-                zapisz();
+                zapis();
                 Lacze.Rysuj();
                 usleep(15000);
             }
@@ -291,7 +296,7 @@ void dron::akcja(char wybor)
                 }
                 obrot(-1);
                 obrot_rotorow();
-                zapisz();
+                zapis();
                 Lacze.Rysuj();
                 usleep(15000);
             }
@@ -307,13 +312,14 @@ void dron::akcja(char wybor)
                 }
                 obrot(1);
                 obrot_rotorow();
-                zapisz();
+                zapis();
                 Lacze.Rysuj();
                 usleep(15000);
             }
         }
         przypisz_sciezke(droga);
         Lacze.DodajNazwePliku("../datasets/sciezka.dat");
+        bool kolizja = false;
         std::cout << "Wznoszenie..." << std::endl;
         for (int i = 0; i < 400; ++i)
         {
@@ -324,23 +330,46 @@ void dron::akcja(char wybor)
             }
             ruch_pionowy(1);
             obrot_rotorow();
-            zapisz();
+            zapis();
             Lacze.Rysuj();
             usleep(15000);
         }
         std::cout << "Lot..." << std::endl;
-        for (int i = 0; i < droga; ++i)
+
+        while (1)
         {
-            korpus = korpus_orginal;
-            for (int i = 0; i < 4; ++i)
+            for (int i = 0; i < droga; ++i)
             {
-                rotor[i] = rotor_orginal[i];
+                korpus = korpus_orginal;
+                for (int i = 0; i < 4; ++i)
+                {
+                    rotor[i] = rotor_orginal[i];
+                }
+                przesuniecie(1);
+                obrot_rotorow();
+                zapis();
+                Lacze.Rysuj();
+                usleep(15000);
             }
-            przesuniecie(1);
-            obrot_rotorow();
-            zapisz();
-            Lacze.Rysuj();
-            usleep(15000);
+            for (std::list<std::shared_ptr<ObiektSceny>>::const_iterator i = Lista_elementow.begin(); i != Lista_elementow.end(); i++)
+            {
+                korpus = korpus_orginal;
+                ruch_pionowy(-400);
+                if(sprawdz_czy_kolizja(*i))
+                {
+                    std::cout << (*i)->pokaz_nazwa() << std::endl;
+                    kolizja  = true;
+                }
+                korpus=korpus_orginal;
+                ruch_pionowy(400);
+            }
+            if(!kolizja)
+            {
+                break;
+            }
+            kolizja=false;
+            droga = 50;
+            przypisz_sciezke(droga);
         }
         std::cout << "Lądowanie..." << std::endl;
         for (int i = 0; i < 400; ++i)
@@ -352,11 +381,11 @@ void dron::akcja(char wybor)
             }
             ruch_pionowy(-1);
             obrot_rotorow();
-            zapisz();
+            zapis();
             Lacze.Rysuj();
             usleep(15000);
         }
-        //Lacze.UsunOstatniaNazwe_ListaLokalna();
+
         Lacze.UsunNazwePliku("../datasets/sciezka.dat");
         Lacze.Rysuj();
         break;
@@ -371,7 +400,7 @@ void dron::akcja(char wybor)
             }
             ruch_pionowy(1);
             obrot_rotorow();
-            zapisz();
+            zapis();
             Lacze.Rysuj();
             usleep(15000);
         }
@@ -385,7 +414,7 @@ void dron::akcja(char wybor)
             }
             przesuniecie(1);
             obrot_rotorow();
-            zapisz();
+            zapis();
             Lacze.Rysuj();
             usleep(15000);
         }
@@ -398,7 +427,7 @@ void dron::akcja(char wybor)
             }
             obrot(1);
             obrot_rotorow();
-            zapisz();
+            zapis();
             Lacze.Rysuj();
             usleep(15000);
         }
@@ -411,7 +440,7 @@ void dron::akcja(char wybor)
             }
             przesuniecie(1);
             obrot_rotorow();
-            zapisz();
+            zapis();
             Lacze.Rysuj();
             usleep(15000);
         }
@@ -426,7 +455,7 @@ void dron::akcja(char wybor)
                 }
                 obrot(1);
                 obrot_rotorow();
-                zapisz();
+                zapis();
                 Lacze.Rysuj();
                 usleep(15000);
             }
@@ -439,7 +468,7 @@ void dron::akcja(char wybor)
                 }
                 przesuniecie(2 * sin(M_PI / 4));
                 obrot_rotorow();
-                zapisz();
+                zapis();
                 Lacze.Rysuj();
                 usleep(15000);
             }
@@ -453,7 +482,7 @@ void dron::akcja(char wybor)
             }
             obrot(1);
             obrot_rotorow();
-            zapisz();
+            zapis();
             Lacze.Rysuj();
             usleep(15000);
         }
@@ -466,7 +495,7 @@ void dron::akcja(char wybor)
             }
             przesuniecie(1);
             obrot_rotorow();
-            zapisz();
+            zapis();
             Lacze.Rysuj();
             usleep(15000);
         }
@@ -479,7 +508,7 @@ void dron::akcja(char wybor)
             }
             obrot(1);
             obrot_rotorow();
-            zapisz();
+            zapis();
             Lacze.Rysuj();
             usleep(15000);
         }
@@ -492,7 +521,7 @@ void dron::akcja(char wybor)
             }
             przesuniecie(1);
             obrot_rotorow();
-            zapisz();
+            zapis();
             Lacze.Rysuj();
             usleep(15000);
         }
@@ -506,7 +535,7 @@ void dron::akcja(char wybor)
             }
             ruch_pionowy(-1);
             obrot_rotorow();
-            zapisz();
+            zapis();
             Lacze.Rysuj();
             usleep(15000);
         }
@@ -561,8 +590,40 @@ Wektor3D dron::pokaz_srodek() const
 void dron::usun_drona()
 {
     Lacze.UsunNazwePliku(korpus_orginal.pokaz_nazwa().c_str());
-    for(int i=0;i<4;++i)
+    for (int i = 0; i < 4; ++i)
     {
         Lacze.UsunNazwePliku(rotor_orginal[i].pokaz_nazwa().c_str());
     }
+}
+/*******8
+ * 
+ * 
+ */
+double dron::promien()
+{
+    return korpus.promien();
+}
+std::string dron::pokaz_nazwa() const
+{
+    return "dron nr " + std::to_string(index);
+}
+int dron::pokaz_index()
+{
+    return index;
+}
+bool dron::sprawdz_czy_kolizja(std::shared_ptr<ObiektSceny> Obiekt)
+{
+    std::shared_ptr<Graniastoslup> identyko = shared_from_this();
+
+    if (Obiekt != identyko)
+    {
+        Wektor3D SrodeDron = pokaz_srodek();
+        Wektor3D SrodekObiektu = Obiekt->pokaz_srodek();
+        double odleglosc_srodkow = sqrt(pow(SrodeDron[0] - SrodekObiektu[0], 2) + pow(SrodeDron[1] - SrodekObiektu[1], 2) + pow(SrodeDron[2] - SrodekObiektu[2], 2));
+        if (promien() + Obiekt->promien() >= odleglosc_srodkow)
+        {
+            return true;
+        }
+    }
+    return false;
 }

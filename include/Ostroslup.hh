@@ -11,6 +11,7 @@
 class Ostroslup : public Graniastoslup
 {
 public:
+    double promien();
     Ostroslup(Wektor3D sro, double skala_x = 1, double skala_y = 1, double skala_z = 1, std::string nazwa = "../datasets/test_obiekt.dat");
 };
 
@@ -51,4 +52,8 @@ Ostroslup::Ostroslup(Wektor3D sro, double skala_x, double skala_y, double skala_
         tmp = Prosto[i];
         wspol.push_back(tmp);
     }
+}
+double Ostroslup::promien()
+{
+    return (*wymiar)[2];
 }

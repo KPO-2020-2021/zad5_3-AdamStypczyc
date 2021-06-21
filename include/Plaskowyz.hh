@@ -11,6 +11,7 @@
 class Plaskowyz : public Graniastoslup
 {
 public:
+    double promien();
     Plaskowyz(Wektor3D sro, double skala_x = 1, double skala_y = 1, double skala_z = 1, std::string nazwa = "../datasets/test_obiekt.dat");
 };
 /*!
@@ -33,7 +34,7 @@ Plaskowyz::Plaskowyz(Wektor3D sro, double skala_x, double skala_y, double skala_
     w = SKALA * skala_x;
     d = SKALA * skala_y;
     h = SKALA * skala_z;
-    Wektor3D proba = {w,d,h};
+    Wektor3D proba = {w, d, h};
     sro[2] += skala_z;
     wymiar = std::make_shared<Wektor3D>(proba);
     nazwa_pliku = nazwa;
@@ -46,4 +47,8 @@ Plaskowyz::Plaskowyz(Wektor3D sro, double skala_x, double skala_y, double skala_
         tmp = Prosto[i];
         wspol.push_back(tmp);
     }
+}
+double Plaskowyz::promien()
+{
+    return (*wymiar)[2];
 }

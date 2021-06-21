@@ -1,6 +1,7 @@
 #pragma once
 #include "Macierz.hh"
 #include "Wektor3D.hh"
+#include "ObiektSceny.hh"
 #include <fstream>
 #include <vector>
 #include <memory>
@@ -13,7 +14,7 @@
  * \param srodek Wektor3D odpowiadający środkowi bryły
  * \param nazwa_pliku zmienna typu string w której przechowujemy nazwę pliku
  */
-class Graniastoslup
+class Graniastoslup : public ObiektSceny, public std::enable_shared_from_this<Graniastoslup>
 {
 protected:
     std::vector<Wektor3D> wspol;
@@ -34,6 +35,9 @@ public:
     void rotacja(Macierz3x3 obrot);
 
     void zapis();
+
+    double promien();
+    bool sprawdz_czy_kolizja(std::shared_ptr<ObiektSceny> Obiekt);
 };
 /*!
  * \brief Przeciążenie operatora [] set.
@@ -146,4 +150,30 @@ void Graniastoslup::zapis()
                 << std::endl;
 
     StrmPlikowy.close();
+}
+/************
+ * 
+ * 
+ */
+double Graniastoslup::promien()
+{
+    double dlugosc_promienia;
+    dlugosc_promienia = sqrt(pow(srodek[0] - wspol[0][0], 2) + pow(srodek[1] - wspol[0][1], 2) + pow(srodek[2] - wspol[0][2], 2));
+    return dlugosc_promienia;
+}
+bool Graniastoslup::sprawdz_czy_kolizja(std::shared_ptr<ObiektSceny> Obiekt)
+{
+    std::shared_ptr<Graniastoslup> identyko = shared_from_this();
+
+    if (Obiekt != identyko)
+    {
+        Wektor3D SrodekGraniasoslup = pokaz_srodek();
+        Wektor3D SrodekObiektu = Obiekt->pokaz_srodek();
+        double odleglosc_srodkow = sqrt(pow(SrodekGraniasoslup[0] - SrodekObiektu[0], 2) + pow(SrodekGraniasoslup[1] - SrodekObiektu[1], 2) + pow(SrodekGraniasoslup[2] - SrodekObiektu[2], 2));
+        if (promien() + Obiekt->promien() >= odleglosc_srodkow)
+        {
+            return true;
+        }
+    }
+    return false;
 }
