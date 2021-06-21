@@ -320,7 +320,16 @@ bool Scena::dzialanie()
                                 std::cin >> tab[2];
                                 if (std::cin.good())
                                 {
-                                    break;
+                                    if (tab[2] >= 300)
+                                    {
+                                        std::cout << "Za wysoki obiekt :0\nDron nie będzie umiał nad nim polecieć w tak rzadkiej atmosferze\nPodaj wysokość jeszcze raz" << std::endl;
+                                        std::cin.clear();
+                                        std::cin.ignore(1024, '\n');
+                                    }
+                                    else
+                                    {
+                                        break;
+                                    }
                                 }
                                 else
                                 {
@@ -406,7 +415,16 @@ bool Scena::dzialanie()
                                 std::cin >> tab[2];
                                 if (std::cin.good())
                                 {
-                                    break;
+                                    if (tab[2] >= 300)
+                                    {
+                                        std::cout << "Za wysoki obiekt :0\nDron nie będzie umiał nad nim polecieć w tak rzadkiej atmosferze\nPodaj wysokość jeszcze raz" << std::endl;
+                                        std::cin.clear();
+                                        std::cin.ignore(1024, '\n');
+                                    }
+                                    else
+                                    {
+                                        break;
+                                    }
                                 }
                                 else
                                 {
@@ -492,7 +510,16 @@ bool Scena::dzialanie()
                                 std::cin >> tab[2];
                                 if (std::cin.good())
                                 {
-                                    break;
+                                    if (tab[2] >= 300)
+                                    {
+                                        std::cout << "Za wysoki obiekt :0\nDron nie będzie umiał nad nim polecieć w tak rzadkiej atmosferze\nPodaj wysokość jeszcze raz" << std::endl;
+                                        std::cin.clear();
+                                        std::cin.ignore(1024, '\n');
+                                    }
+                                    else
+                                    {
+                                        break;
+                                    }
                                 }
                                 else
                                 {
@@ -726,7 +753,7 @@ bool Scena::dzialanie()
                 {
                     wsk_1++;
                 }
-                (*wsk_1)->akcja(wybor, Elementy_powierzchni);
+                (*wsk_1)->akcja(wybor, Elementy_powierzchni, Lst_dronow);
             }
         }
     }

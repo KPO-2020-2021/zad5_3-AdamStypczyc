@@ -42,7 +42,7 @@ public:
     void obrot_rotorow();
 
     void zapis();
-    void akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elementow);
+    void akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elementow, std::list<std::shared_ptr<dron>> &Lst_drony);
     void przypisz_sciezke(double droga);
 
     Wektor3D pokaz_srodek() const;
@@ -190,7 +190,7 @@ void dron::zapis()
  * \param droga zmienna pomocnicza do której przypisywana jest droga
  * \param kat zmienna do której użytkownik przypisuje kąt obrotu
  */
-void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elementow)
+void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elementow, std::list<std::shared_ptr<dron>> &Lst_drony)
 {
     double droga;
     double kat;
@@ -325,7 +325,7 @@ void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elem
         Lacze.DodajNazwePliku("../datasets/sciezka.dat");
         bool kolizja = false;
         std::cout << "Wznoszenie..." << std::endl;
-        for (int i = 0; i < 400; ++i)
+        for (int i = 0; i < 600; ++i)
         {
             korpus = korpus_orginal;
             for (int i = 0; i < 4; ++i)
@@ -358,25 +358,39 @@ void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elem
             for (std::list<std::shared_ptr<ObiektSceny>>::const_iterator i = Lista_elementow.begin(); i != Lista_elementow.end(); i++)
             {
                 korpus = korpus_orginal;
-                ruch_pionowy(-400);
+                ruch_pionowy(-600);
                 if (sprawdz_czy_kolizja(*i))
                 {
-                    std::cout << (*i)->pokaz_nazwa() << std::endl;
+                    std::cout << "Nie można lądować kolizja z obiektem:\n"
+                              << (*i)->pokaz_nazwa() << std::endl;
                     kolizja = true;
                 }
                 korpus = korpus_orginal;
-                ruch_pionowy(400);
+                ruch_pionowy(600);
+            }
+            for (std::list<std::shared_ptr<dron>>::const_iterator i = Lst_drony.begin(); i != Lst_drony.end(); i++)
+            {
+                korpus = korpus_orginal;
+                ruch_pionowy(-600);
+                if (sprawdz_czy_kolizja(*i))
+                {
+                    std::cout << "Nie można lądować kolizja z obiektem:\n"
+                              << (*i)->pokaz_nazwa() << std::endl;
+                    kolizja = true;
+                }
+                korpus = korpus_orginal;
+                ruch_pionowy(600);
             }
             if (!kolizja)
             {
                 break;
             }
             kolizja = false;
-            droga = 50;
+            droga = 30;
             przypisz_sciezke(droga);
         }
         std::cout << "Lądowanie..." << std::endl;
-        for (int i = 0; i < 400; ++i)
+        for (int i = 0; i < 600; ++i)
         {
             korpus = korpus_orginal;
             for (int i = 0; i < 4; ++i)
@@ -397,7 +411,7 @@ void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elem
     case 'r':
     {
         std::cout << "Wznoszenie..." << std::endl;
-        for (int i = 0; i < 400; ++i)
+        for (int i = 0; i < 600; ++i)
         {
             korpus = korpus_orginal;
             for (int i = 0; i < 4; ++i)
@@ -532,7 +546,7 @@ void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elem
             usleep(15000);
         }
         std::cout << "Lądowanie..." << std::endl;
-        for (int i = 0; i < 400; ++i)
+        for (int i = 0; i < 600; ++i)
         {
             korpus = korpus_orginal;
             for (int i = 0; i < 4; ++i)
@@ -569,7 +583,7 @@ void dron::przypisz_sciezke(double droga)
     Wektor3D next = korpus.pokaz_srodek();
     next[2] = 0;
     sciezka.push_back(next);
-    next[2] = 400;
+    next[2] = 600;
     sciezka.push_back(next);
     next[0] = next[0] + droga * cos(kat * M_PI / 180);
     next[1] = next[1] + droga * sin(kat * M_PI / 180);
@@ -623,13 +637,13 @@ int dron::pokaz_index()
 bool dron::sprawdz_czy_kolizja(std::shared_ptr<ObiektSceny> Obiekt)
 {
     std::shared_ptr<dron> identyko = shared_from_this();
-
     if (Obiekt != identyko)
     {
         Wektor3D SrodeDron = pokaz_srodek();
         Wektor3D SrodekObiektu = Obiekt->pokaz_srodek();
-        double odleglosc_srodkow = sqrt(pow(SrodeDron[0] - SrodekObiektu[0], 2) + pow(SrodeDron[1] - SrodekObiektu[1], 2) + pow(SrodeDron[2] - SrodekObiektu[2], 2));
-        if (promien() + Obiekt->promien() >= odleglosc_srodkow)
+
+        double odleglosc_srodkow = sqrt(pow(SrodeDron[0] - SrodekObiektu[0], 2) + pow(SrodeDron[1] - SrodekObiektu[1], 2) /*+ pow(SrodeDron[2] - SrodekObiektu[2], 2)*/);
+        if (promien() + 20 + Obiekt->promien() >= odleglosc_srodkow) //20 to promień rotora
         {
             return true;
         }

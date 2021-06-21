@@ -140,14 +140,14 @@ void Graniastoslup::zapis()
             StrmPlikowy << wspol[j + i] << std::endl;
         }
         StrmPlikowy << srodek - translacja_srodka << std::endl
-                    << std::endl;
+                   << std::endl;
     }
 
     StrmPlikowy << srodek + translacja_srodka << std::endl;
     StrmPlikowy << wspol[0] << std::endl;
     StrmPlikowy << wspol[1] << std::endl;
     StrmPlikowy << srodek - translacja_srodka << std::endl
-                << std::endl;
+                 << std::endl;
 
     StrmPlikowy.close();
 }
