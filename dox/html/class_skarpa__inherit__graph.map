@@ -1,4 +1,6 @@
 <map id="Skarpa" name="Skarpa">
-<area shape="rect" id="node1" title="Klasa Skarpa. Deklaracja klasy Skarpa. Zawiera ona elementy i metody potrzebne do wykonywania różnych..." alt="" coords="29,292,119,369"/>
-<area shape="rect" id="node2" href="$class_graniastoslup.html" title="Klasa Graniastoslup. Deklaracja klasy Graniastoslup. Zawiera ona elementy i metody potrzebne do wykon..." alt="" coords="5,5,143,244"/>
+<area shape="rect" id="node1" title="Klasa Skarpa. Deklaracja klasy Skarpa. Zawiera ona elementy i metody potrzebne do wykonywania różnych..." alt="" coords="153,505,255,597"/>
+<area shape="rect" id="node2" href="$class_graniastoslup.html" title="Klasa Graniastoslup. Deklaracja klasy Graniastoslup. Zawiera ona elementy i metody potrzebne do wykon..." alt="" coords="115,189,293,457"/>
+<area shape="rect" id="node3" href="$class_obiekt_sceny.html" title="Klasa wirtualna ObiektSceny. Posiada ona wszystkie metody potrzebne do badania kolizyjności." alt="" coords="5,5,184,141"/>
+<area shape="rect" id="node4" title=" " alt="" coords="208,27,419,119"/>
 </map>

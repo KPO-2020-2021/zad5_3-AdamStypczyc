@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ostroslup_187',['Ostroslup',['../class_ostroslup.html',1,'']]]
+  ['obiektsceny_191',['ObiektSceny',['../class_obiekt_sceny.html',1,'']]],
+  ['ostroslup_192',['Ostroslup',['../class_ostroslup.html',1,'']]]
 ];

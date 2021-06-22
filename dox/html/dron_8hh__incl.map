@@ -1,19 +1,20 @@
-<map id="/home/adam/zad5_2&#45;AdamStypczyc/include/dron.hh" name="/home/adam/zad5_2&#45;AdamStypczyc/include/dron.hh">
-<area shape="rect" id="node1" title=" " alt="" coords="163,5,418,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="29,95,104,121"/>
-<area shape="rect" id="node3" href="$_prostopadloscian_8hh.html" title=" " alt="" coords="129,95,282,121"/>
-<area shape="rect" id="node14" href="$_graniastoslup6_8hh.html" title=" " alt="" coords="306,95,446,121"/>
-<area shape="rect" id="node15" href="$lacze__do__gnuplota_8hh.html" title=" " alt="" coords="471,95,633,121"/>
-<area shape="rect" id="node4" href="$_graniastoslup_8hh.html" title=" " alt="" coords="225,169,357,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,244,99,271"/>
-<area shape="rect" id="node6" href="$_wektor3_d_8hh.html" title=" " alt="" coords="123,244,229,271"/>
-<area shape="rect" id="node11" title=" " alt="" coords="254,244,327,271"/>
-<area shape="rect" id="node12" title=" " alt="" coords="454,244,517,271"/>
-<area shape="rect" id="node13" title=" " alt="" coords="352,244,429,271"/>
-<area shape="rect" id="node7" href="$wektor_8hh.html" title=" " alt="" coords="133,319,219,345"/>
-<area shape="rect" id="node8" title=" " alt="" coords="37,393,117,420"/>
-<area shape="rect" id="node9" title=" " alt="" coords="141,393,211,420"/>
-<area shape="rect" id="node10" title=" " alt="" coords="235,393,346,420"/>
-<area shape="rect" id="node16" title=" " alt="" coords="523,169,581,196"/>
-<area shape="rect" id="node17" title=" " alt="" coords="605,169,648,196"/>
+<map id="/home/adam/zad5_3&#45;AdamStypczyc/include/dron.hh" name="/home/adam/zad5_3&#45;AdamStypczyc/include/dron.hh">
+<area shape="rect" id="node1" title=" " alt="" coords="226,5,481,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="92,95,167,121"/>
+<area shape="rect" id="node3" href="$_prostopadloscian_8hh.html" title=" " alt="" coords="191,95,345,121"/>
+<area shape="rect" id="node16" href="$_graniastoslup6_8hh.html" title=" " alt="" coords="369,95,509,121"/>
+<area shape="rect" id="node17" href="$lacze__do__gnuplota_8hh.html" title=" " alt="" coords="465,169,628,196"/>
+<area shape="rect" id="node4" href="$_graniastoslup_8hh.html" title=" " alt="" coords="213,169,345,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="328,244,421,271"/>
+<area shape="rect" id="node6" href="$_wektor3_d_8hh.html" title=" " alt="" coords="172,319,279,345"/>
+<area shape="rect" id="node11" href="$_obiekt_sceny_8hh.html" title=" " alt="" coords="32,244,155,271"/>
+<area shape="rect" id="node13" title=" " alt="" coords="5,319,83,345"/>
+<area shape="rect" id="node14" title=" " alt="" coords="179,244,253,271"/>
+<area shape="rect" id="node15" title=" " alt="" coords="446,244,509,271"/>
+<area shape="rect" id="node7" href="$wektor_8hh.html" title=" " alt="" coords="182,393,269,420"/>
+<area shape="rect" id="node8" title=" " alt="" coords="87,468,167,495"/>
+<area shape="rect" id="node9" title=" " alt="" coords="191,468,260,495"/>
+<area shape="rect" id="node10" title=" " alt="" coords="285,468,395,495"/>
+<area shape="rect" id="node12" title=" " alt="" coords="409,319,468,345"/>
+<area shape="rect" id="node18" title=" " alt="" coords="584,244,627,271"/>
 </map>

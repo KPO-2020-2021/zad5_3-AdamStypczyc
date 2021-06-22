@@ -1,0 +1,10 @@
+<map id="ObiektSceny" name="ObiektSceny">
+<area shape="rect" id="node1" title="Klasa wirtualna ObiektSceny. Posiada ona wszystkie metody potrzebne do badania kolizyjności." alt="" coords="175,5,354,141"/>
+<area shape="rect" id="node2" href="$classdron.html" title="Klasa dron Deklaracja klasy dron. Zawiera ona elementy i metody potrzebne do wykonywania różnych oper..." alt="" coords="74,189,253,457"/>
+<area shape="rect" id="node3" href="$class_graniastoslup.html" title="Klasa Graniastoslup. Deklaracja klasy Graniastoslup. Zawiera ona elementy i metody potrzebne do wykon..." alt="" coords="277,189,455,457"/>
+<area shape="rect" id="node4" href="$class_graniastoslup6.html" title="Klasa Graniastoslup6. Deklaracja klasy Graniastoslup6. Zawiera ona elementy i metody potrzebne do wyk..." alt="" coords="5,513,151,590"/>
+<area shape="rect" id="node5" href="$class_ostroslup.html" title="Klasa Ostroslup. Deklaracja klasy Ostroslup. Zawiera ona elementy i metody potrzebne do wykonywania r..." alt="" coords="175,505,285,597"/>
+<area shape="rect" id="node6" href="$class_plaskowyz.html" title="Klasa Plaskowyz. Deklaracja klasy Plaskowyz. Zawiera ona elementy i metody potrzebne do wykonywania r..." alt="" coords="309,505,423,597"/>
+<area shape="rect" id="node7" href="$class_prostopadloscian.html" title="Klasa Prostopadloscian. Deklaracja klasy prostopadłościan. Zawiera ona elementy i metody potrzebne do..." alt="" coords="448,513,607,590"/>
+<area shape="rect" id="node8" href="$class_skarpa.html" title="Klasa Skarpa. Deklaracja klasy Skarpa. Zawiera ona elementy i metody potrzebne do wykonywania różnych..." alt="" coords="631,505,733,597"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="dron::sprawdz_czy_kolizja" name="dron::sprawdz_czy_kolizja">
+<area shape="rect" id="node1" title="Metoda badająca kolizyjność drona z obiektami powierzchnii oraz innymi dronami Metoda oblicza odległo..." alt="" coords="5,42,196,69"/>
+<area shape="rect" id="node2" href="$classdron.html#a5d56c6d7d5d8db7b4bf5292083769c14" title="Metoda zwracająca Wektor3D będący środkiem korpusu drona." alt="" coords="244,15,392,42"/>
+<area shape="rect" id="node4" href="$classdron.html#a48af4f13be66015eab4e3bda8118b9bb" title="Metoda obliczjąca promień drona potrzebnego do badania kolizyjności." alt="" coords="261,67,375,94"/>
+<area shape="rect" id="node3" href="$class_graniastoslup.html#a745ff61bd79e1f10c3e66816a1b6dea0" title="Metoda pokazująca wartość środka Umożliwia podgląd wartości środka." alt="" coords="448,5,607,47"/>
+<area shape="rect" id="node5" href="$class_graniastoslup.html#a566ff818afb93fcaaf857cfaeb965760" title="Metoda obliczjąca promień graniastoslupa potrzebnego do badania kolizyjności." alt="" coords="440,71,615,98"/>
+</map>

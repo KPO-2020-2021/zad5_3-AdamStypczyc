@@ -1,0 +1,4 @@
+<map id="dron::zapis" name="dron::zapis">
+<area shape="rect" id="node1" title="Metoda zapisujaca drona do plików." alt="" coords="148,5,241,32"/>
+<area shape="rect" id="node2" href="$classdron.html#a59dd130130945987bb0f5295eab917c4" title="Metoda odpowiadająca za porusanie się i animację drona." alt="" coords="5,5,100,32"/>
+</map>

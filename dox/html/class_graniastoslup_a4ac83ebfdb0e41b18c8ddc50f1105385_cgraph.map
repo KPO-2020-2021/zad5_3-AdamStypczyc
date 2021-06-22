@@ -1,0 +1,5 @@
+<map id="Graniastoslup::sprawdz_czy_kolizja" name="Graniastoslup::sprawdz_czy_kolizja">
+<area shape="rect" id="node1" title="Metoda badająca kolizyjność graniastoslupa z obiektami powierzchnii oraz innymi dronami Metoda oblicz..." alt="" coords="5,35,180,76"/>
+<area shape="rect" id="node2" href="$class_graniastoslup.html#a745ff61bd79e1f10c3e66816a1b6dea0" title="Metoda pokazująca wartość środka Umożliwia podgląd wartości środka." alt="" coords="236,5,395,47"/>
+<area shape="rect" id="node3" href="$class_graniastoslup.html#a566ff818afb93fcaaf857cfaeb965760" title="Metoda obliczjąca promień graniastoslupa potrzebnego do badania kolizyjności." alt="" coords="228,71,403,98"/>
+</map>

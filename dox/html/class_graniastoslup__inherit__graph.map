@@ -1,8 +1,10 @@
 <map id="Graniastoslup" name="Graniastoslup">
-<area shape="rect" id="node1" title="Klasa Graniastoslup. Deklaracja klasy Graniastoslup. Zawiera ona elementy i metody potrzebne do wykon..." alt="" coords="297,5,435,244"/>
-<area shape="rect" id="node2" href="$class_graniastoslup6.html" title="Klasa Graniastoslup6. Deklaracja klasy Graniastoslup6. Zawiera ona elementy i metody potrzebne do wyk..." alt="" coords="5,292,151,369"/>
-<area shape="rect" id="node3" href="$class_ostroslup.html" title="Klasa Ostroslup. Deklaracja klasy Ostroslup. Zawiera ona elementy i metody potrzebne do wykonywania r..." alt="" coords="175,292,285,369"/>
-<area shape="rect" id="node4" href="$class_plaskowyz.html" title="Klasa Plaskowyz. Deklaracja klasy Plaskowyz. Zawiera ona elementy i metody potrzebne do wykonywania r..." alt="" coords="309,292,423,369"/>
-<area shape="rect" id="node5" href="$class_prostopadloscian.html" title="Klasa Prostopadloscian. Deklaracja klasy prostopadłościan. Zawiera ona elementy i metody potrzebne do..." alt="" coords="448,292,607,369"/>
-<area shape="rect" id="node6" href="$class_skarpa.html" title="Klasa Skarpa. Deklaracja klasy Skarpa. Zawiera ona elementy i metody potrzebne do wykonywania różnych..." alt="" coords="631,292,722,369"/>
+<area shape="rect" id="node1" title="Klasa Graniastoslup. Deklaracja klasy Graniastoslup. Zawiera ona elementy i metody potrzebne do wykon..." alt="" coords="277,189,455,457"/>
+<area shape="rect" id="node4" href="$class_graniastoslup6.html" title="Klasa Graniastoslup6. Deklaracja klasy Graniastoslup6. Zawiera ona elementy i metody potrzebne do wyk..." alt="" coords="5,513,151,590"/>
+<area shape="rect" id="node5" href="$class_ostroslup.html" title="Klasa Ostroslup. Deklaracja klasy Ostroslup. Zawiera ona elementy i metody potrzebne do wykonywania r..." alt="" coords="175,505,285,597"/>
+<area shape="rect" id="node6" href="$class_plaskowyz.html" title="Klasa Plaskowyz. Deklaracja klasy Plaskowyz. Zawiera ona elementy i metody potrzebne do wykonywania r..." alt="" coords="309,505,423,597"/>
+<area shape="rect" id="node7" href="$class_prostopadloscian.html" title="Klasa Prostopadloscian. Deklaracja klasy prostopadłościan. Zawiera ona elementy i metody potrzebne do..." alt="" coords="448,513,607,590"/>
+<area shape="rect" id="node8" href="$class_skarpa.html" title="Klasa Skarpa. Deklaracja klasy Skarpa. Zawiera ona elementy i metody potrzebne do wykonywania różnych..." alt="" coords="631,505,733,597"/>
+<area shape="rect" id="node2" href="$class_obiekt_sceny.html" title="Klasa wirtualna ObiektSceny. Posiada ona wszystkie metody potrzebne do badania kolizyjności." alt="" coords="167,5,346,141"/>
+<area shape="rect" id="node3" title=" " alt="" coords="370,27,581,119"/>
 </map>

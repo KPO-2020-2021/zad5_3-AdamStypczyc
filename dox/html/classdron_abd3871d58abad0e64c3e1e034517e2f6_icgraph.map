@@ -1,4 +1,4 @@
 <map id="dron::przypisz_sciezke" name="dron::przypisz_sciezke">
 <area shape="rect" id="node1" title="Metoda odpowiadjąca za budowę ścieżki lotu drona." alt="" coords="148,5,316,32"/>
-<area shape="rect" id="node2" href="$classdron.html#a1c22017426486f689273d83dfe06aafe" title="Metoda odpowiadająca za porusanie się i animację drona." alt="" coords="5,5,100,32"/>
+<area shape="rect" id="node2" href="$classdron.html#a59dd130130945987bb0f5295eab917c4" title="Metoda odpowiadająca za porusanie się i animację drona." alt="" coords="5,5,100,32"/>
 </map>

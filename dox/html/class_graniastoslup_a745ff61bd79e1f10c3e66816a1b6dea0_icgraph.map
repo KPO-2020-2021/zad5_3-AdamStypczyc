@@ -1,6 +1,8 @@
 <map id="Graniastoslup::pokaz_srodek" name="Graniastoslup::pokaz_srodek">
-<area shape="rect" id="node1" title="Metoda pokazująca wartość środka Umożliwia podgląd wartości środka." alt="" coords="364,23,523,65"/>
-<area shape="rect" id="node2" href="$classdron.html#a5d56c6d7d5d8db7b4bf5292083769c14" title="Metoda zwracająca Wektor3D będący środkiem korpusu drona." alt="" coords="158,5,306,32"/>
-<area shape="rect" id="node3" href="$classdron.html#abd3871d58abad0e64c3e1e034517e2f6" title="Metoda odpowiadjąca za budowę ścieżki lotu drona." alt="" coords="148,56,316,83"/>
-<area shape="rect" id="node4" href="$classdron.html#a1c22017426486f689273d83dfe06aafe" title="Metoda odpowiadająca za porusanie się i animację drona." alt="" coords="5,56,100,83"/>
+<area shape="rect" id="node1" title="Metoda pokazująca wartość środka Umożliwia podgląd wartości środka." alt="" coords="609,49,768,90"/>
+<area shape="rect" id="node2" href="$classdron.html#a5d56c6d7d5d8db7b4bf5292083769c14" title="Metoda zwracająca Wektor3D będący środkiem korpusu drona." alt="" coords="400,5,548,32"/>
+<area shape="rect" id="node5" href="$classdron.html#abd3871d58abad0e64c3e1e034517e2f6" title="Metoda odpowiadjąca za budowę ścieżki lotu drona." alt="" coords="159,56,327,83"/>
+<area shape="rect" id="node6" href="$class_graniastoslup.html#a4ac83ebfdb0e41b18c8ddc50f1105385" title="Metoda badająca kolizyjność graniastoslupa z obiektami powierzchnii oraz innymi dronami Metoda oblicz..." alt="" coords="387,107,561,149"/>
+<area shape="rect" id="node3" href="$classdron.html#a1f4fe1fcccd947f9809e9ed06a3d72e1" title="Metoda badająca kolizyjność drona z obiektami powierzchnii oraz innymi dronami Metoda oblicza odległo..." alt="" coords="148,5,339,32"/>
+<area shape="rect" id="node4" href="$classdron.html#a59dd130130945987bb0f5295eab917c4" title="Metoda odpowiadająca za porusanie się i animację drona." alt="" coords="5,31,100,57"/>
 </map>

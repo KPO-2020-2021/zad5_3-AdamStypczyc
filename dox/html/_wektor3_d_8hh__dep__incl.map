@@ -1,12 +1,13 @@
-<map id="/home/adam/zad5_2&#45;AdamStypczyc/include/Wektor3D.hh" name="/home/adam/zad5_2&#45;AdamStypczyc/include/Wektor3D.hh">
-<area shape="rect" id="node1" title=" " alt="" coords="144,5,399,47"/>
-<area shape="rect" id="node2" href="$macierz_8hh.html" title=" " alt="" coords="49,95,304,136"/>
-<area shape="rect" id="node3" href="$_graniastoslup_8hh.html" title=" " alt="" coords="144,184,399,225"/>
-<area shape="rect" id="node4" href="$_prostopadloscian_8hh.html" title=" " alt="" coords="284,273,539,315"/>
-<area shape="rect" id="node10" href="$_graniastoslup6_8hh.html" title=" " alt="" coords="5,273,260,315"/>
-<area shape="rect" id="node5" href="$dron_8hh.html" title=" " alt="" coords="5,363,260,404"/>
-<area shape="rect" id="node7" href="$_ostroslup_8hh.html" title=" " alt="" coords="284,363,539,404"/>
-<area shape="rect" id="node8" href="$_plaskowyz_8hh.html" title=" " alt="" coords="563,363,817,404"/>
-<area shape="rect" id="node9" href="$_skarpa_8hh.html" title=" " alt="" coords="841,363,1096,404"/>
-<area shape="rect" id="node6" href="$_scena_8hh.html" title=" " alt="" coords="423,452,677,493"/>
+<map id="/home/adam/zad5_3&#45;AdamStypczyc/include/Wektor3D.hh" name="/home/adam/zad5_3&#45;AdamStypczyc/include/Wektor3D.hh">
+<area shape="rect" id="node1" title=" " alt="" coords="195,5,449,47"/>
+<area shape="rect" id="node2" href="$macierz_8hh.html" title=" " alt="" coords="5,95,260,136"/>
+<area shape="rect" id="node3" href="$_graniastoslup_8hh.html" title=" " alt="" coords="195,184,449,225"/>
+<area shape="rect" id="node11" href="$_obiekt_sceny_8hh.html" title=" " alt="" coords="360,95,615,136"/>
+<area shape="rect" id="node4" href="$_prostopadloscian_8hh.html" title=" " alt="" coords="335,273,589,315"/>
+<area shape="rect" id="node10" href="$_graniastoslup6_8hh.html" title=" " alt="" coords="56,273,311,315"/>
+<area shape="rect" id="node5" href="$dron_8hh.html" title=" " alt="" coords="56,363,311,404"/>
+<area shape="rect" id="node7" href="$_ostroslup_8hh.html" title=" " alt="" coords="335,363,589,404"/>
+<area shape="rect" id="node8" href="$_plaskowyz_8hh.html" title=" " alt="" coords="613,363,868,404"/>
+<area shape="rect" id="node9" href="$_skarpa_8hh.html" title=" " alt="" coords="892,363,1147,404"/>
+<area shape="rect" id="node6" href="$_scena_8hh.html" title=" " alt="" coords="473,452,728,493"/>
 </map>

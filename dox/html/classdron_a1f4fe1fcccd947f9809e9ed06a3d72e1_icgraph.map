@@ -1,0 +1,4 @@
+<map id="dron::sprawdz_czy_kolizja" name="dron::sprawdz_czy_kolizja">
+<area shape="rect" id="node1" title="Metoda badająca kolizyjność drona z obiektami powierzchnii oraz innymi dronami Metoda oblicza odległo..." alt="" coords="148,5,339,32"/>
+<area shape="rect" id="node2" href="$classdron.html#a59dd130130945987bb0f5295eab917c4" title="Metoda odpowiadająca za porusanie się i animację drona." alt="" coords="5,5,100,32"/>
+</map>

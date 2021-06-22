@@ -1,3 +1,11 @@
-<map id="Graficzna hierarchia klas" name="Graficzna hierarchia klas">
-<area shape="rect" id="node1" href="$class_macierz.html" title=" " alt="" coords="5,5,168,32"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,192,83"/>
+<area shape="rect" id="node2" href="$classdron.html" title="Klasa dron Deklaracja klasy dron. Zawiera ona elementy i metody potrzebne do wykonywania różnych oper..." alt="" coords="271,56,321,83"/>
+<area shape="rect" id="node3" href="$class_graniastoslup.html" title="Klasa Graniastoslup. Deklaracja klasy Graniastoslup. Zawiera ona elementy i metody potrzebne do wykon..." alt="" coords="240,107,352,133"/>
+<area shape="rect" id="node4" href="$class_graniastoslup6.html" title="Klasa Graniastoslup6. Deklaracja klasy Graniastoslup6. Zawiera ona elementy i metody potrzebne do wyk..." alt="" coords="407,5,527,32"/>
+<area shape="rect" id="node5" href="$class_ostroslup.html" title="Klasa Ostroslup. Deklaracja klasy Ostroslup. Zawiera ona elementy i metody potrzebne do wykonywania r..." alt="" coords="425,56,509,83"/>
+<area shape="rect" id="node6" href="$class_plaskowyz.html" title="Klasa Plaskowyz. Deklaracja klasy Plaskowyz. Zawiera ona elementy i metody potrzebne do wykonywania r..." alt="" coords="421,107,512,133"/>
+<area shape="rect" id="node7" href="$class_prostopadloscian.html" title="Klasa Prostopadloscian. Deklaracja klasy prostopadłościan. Zawiera ona elementy i metody potrzebne do..." alt="" coords="400,157,533,184"/>
+<area shape="rect" id="node8" href="$class_skarpa.html" title="Klasa Skarpa. Deklaracja klasy Skarpa. Zawiera ona elementy i metody potrzebne do wykonywania różnych..." alt="" coords="433,208,500,235"/>
+<area shape="rect" id="node9" href="$class_obiekt_sceny.html" title="Klasa wirtualna ObiektSceny. Posiada ona wszystkie metody potrzebne do badania kolizyjności." alt="" coords="47,107,151,133"/>
 </map>

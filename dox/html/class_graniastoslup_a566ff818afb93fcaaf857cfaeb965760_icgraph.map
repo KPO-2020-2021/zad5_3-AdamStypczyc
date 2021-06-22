@@ -1,0 +1,8 @@
+<map id="Graniastoslup::promien" name="Graniastoslup::promien">
+<area shape="rect" id="node1" title="Metoda obliczjąca promień graniastoslupa potrzebnego do badania kolizyjności." alt="" coords="609,56,784,83"/>
+<area shape="rect" id="node2" href="$classdron.html#a2a6f71538eb4a1413c1eddeb82abee54" title="Konstruktor parametryczny klasy dron. Buduje drona i tworzy pliki w których będą zapisywanie punkty...." alt="" coords="430,5,518,32"/>
+<area shape="rect" id="node3" href="$classdron.html#a48af4f13be66015eab4e3bda8118b9bb" title="Metoda obliczjąca promień drona potrzebnego do badania kolizyjności." alt="" coords="417,56,531,83"/>
+<area shape="rect" id="node6" href="$class_graniastoslup.html#a4ac83ebfdb0e41b18c8ddc50f1105385" title="Metoda badająca kolizyjność graniastoslupa z obiektami powierzchnii oraz innymi dronami Metoda oblicz..." alt="" coords="387,107,561,149"/>
+<area shape="rect" id="node4" href="$classdron.html#a1f4fe1fcccd947f9809e9ed06a3d72e1" title="Metoda badająca kolizyjność drona z obiektami powierzchnii oraz innymi dronami Metoda oblicza odległo..." alt="" coords="148,56,339,83"/>
+<area shape="rect" id="node5" href="$classdron.html#a59dd130130945987bb0f5295eab917c4" title="Metoda odpowiadająca za porusanie się i animację drona." alt="" coords="5,56,100,83"/>
+</map>
