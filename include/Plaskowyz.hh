@@ -50,6 +50,10 @@ Plaskowyz::Plaskowyz(Wektor3D sro, double skala_x, double skala_y, double skala_
     }
     polowa_h = skala_z;
 }
+/*!
+ * \brief Metoda obliczjąca promień plaskowyzu potrzebnego do badania kolizyjności
+ * \return Długość promiania plaskowyzu.
+ */
 double Plaskowyz::promien()
 {
     Wektor3D tmp = srodek;

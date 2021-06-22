@@ -151,9 +151,9 @@ void Graniastoslup::zapis()
 
     StrmPlikowy.close();
 }
-/************
- * 
- * 
+/*!
+ * \brief Metoda obliczjąca promień graniastoslupa potrzebnego do badania kolizyjności
+ * \return Długość promiania graniastoslupa.
  */
 double Graniastoslup::promien()
 {
@@ -161,6 +161,14 @@ double Graniastoslup::promien()
     dlugosc_promienia = sqrt(pow(srodek[0] - wspol[0][0], 2) + pow(srodek[1] - wspol[0][1], 2) + pow(srodek[2] - wspol[0][2], 2));
     return dlugosc_promienia;
 }
+/*!
+ * \brief Metoda badająca kolizyjność graniastoslupa z obiektami powierzchnii oraz innymi dronami
+ * Metoda oblicza odległość środków obydwu porównywanych obiektów i porównuje ją z sumą długości promienii.
+ * Jeżeli suma długości promieni jest większa niż odległość środków metoda zwraca informację o kolizyjności. 
+ * \param Obiekt jeden z obiektów porównywanych
+ * \param identyko graniastoslup którego kolizyjność sprawdzamy
+ * \return true\false 
+ */
 bool Graniastoslup::sprawdz_czy_kolizja(std::shared_ptr<ObiektSceny> Obiekt)
 {
     std::shared_ptr<Graniastoslup> identyko = shared_from_this();

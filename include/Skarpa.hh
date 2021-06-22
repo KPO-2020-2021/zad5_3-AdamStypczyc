@@ -71,6 +71,10 @@ Skarpa::Skarpa(Wektor3D sro, double skala_x, double skala_y, double skala_z, std
     polowa_d = skala_y;
     polowa_h = skala_z;
 }
+/*!
+ * \brief Metoda obliczjąca promień skarpy potrzebnego do badania kolizyjności
+ * \return Długość promiania skarpy.
+ */
 double Skarpa::promien()
 {
     double proba;
@@ -79,5 +83,5 @@ double Skarpa::promien()
     tmp[1] -= polowa_d;
     tmp[2] -= polowa_h;
     proba = sqrt(pow(wspol[1][0] - tmp[0], 2) + pow(wspol[1][1] - tmp[1], 2));
-    return proba;
+    return proba + 30;
 }

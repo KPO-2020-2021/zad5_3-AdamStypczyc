@@ -618,22 +618,38 @@ void dron::usun_drona()
         Lacze.UsunNazwePliku(rotor_orginal[i].pokaz_nazwa().c_str());
     }
 }
-/*******8
- * 
- * 
+/*!
+ * \brief Metoda obliczjąca promień drona potrzebnego do badania kolizyjności
+ * \return Długość promiania korpusu drona.
  */
 double dron::promien()
 {
     return korpus.promien();
 }
+/*!
+ * \brief Metoda zwracająca nazwę drona 
+ * \return Nazwa drona
+ */
 std::string dron::pokaz_nazwa() const
 {
     return "dron nr " + std::to_string(index);
 }
+/*!
+ * \brief Metoda zwracająca index drona 
+ * \return index drona
+ */
 int dron::pokaz_index()
 {
     return index;
 }
+/*!
+ * \brief Metoda badająca kolizyjność drona z obiektami powierzchnii oraz innymi dronami
+ * Metoda oblicza odległość środków obydwu porównywanych obiektów i porównuje ją z sumą długości promienii.
+ * Jeżeli suma długości promieni jest większa niż odległość środków metoda zwraca informację o kolizyjności. 
+ * \param Obiekt jeden z obiektów porównywanych
+ * \param identyko dron którego kolizyjność sprawdzamy
+ * \return true\false 
+ */
 bool dron::sprawdz_czy_kolizja(std::shared_ptr<ObiektSceny> Obiekt)
 {
     std::shared_ptr<dron> identyko = shared_from_this();
@@ -642,7 +658,7 @@ bool dron::sprawdz_czy_kolizja(std::shared_ptr<ObiektSceny> Obiekt)
         Wektor3D SrodeDron = pokaz_srodek();
         Wektor3D SrodekObiektu = Obiekt->pokaz_srodek();
 
-        double odleglosc_srodkow = sqrt(pow(SrodeDron[0] - SrodekObiektu[0], 2) + pow(SrodeDron[1] - SrodekObiektu[1], 2) /*+ pow(SrodeDron[2] - SrodekObiektu[2], 2)*/);
+        double odleglosc_srodkow = sqrt(pow(SrodeDron[0] - SrodekObiektu[0], 2) + pow(SrodeDron[1] - SrodekObiektu[1], 2));
         if (promien() + 20 + Obiekt->promien() >= odleglosc_srodkow) //20 to promień rotora
         {
             return true;

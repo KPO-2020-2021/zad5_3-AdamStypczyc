@@ -3,6 +3,9 @@
 #include <memory>
 #include "Wektor3D.hh"
 
+/*!
+ * \brief Klasa wirtualna ObiektSceny. Posiada ona wszystkie metody potrzebne do badania kolizyjności.
+ */
 class ObiektSceny
 {
 

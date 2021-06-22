@@ -55,6 +55,10 @@ Ostroslup::Ostroslup(Wektor3D sro, double skala_x, double skala_y, double skala_
     }
     polowa_h = skala_z;
 }
+/*!
+ * \brief Metoda obliczjąca promień ostroslupa potrzebnego do badania kolizyjności
+ * \return Długość promiania ostroslupa.
+ */
 double Ostroslup::promien()
 {
     Wektor3D tmp = srodek;
