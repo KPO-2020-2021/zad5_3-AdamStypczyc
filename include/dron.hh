@@ -336,7 +336,7 @@ void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elem
             obrot_rotorow();
             zapis();
             Lacze.Rysuj();
-            usleep(15000);
+            usleep(12000);
         }
         std::cout << "Lot..." << std::endl;
 
@@ -401,7 +401,7 @@ void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elem
             obrot_rotorow();
             zapis();
             Lacze.Rysuj();
-            usleep(15000);
+            usleep(12000);
         }
 
         Lacze.UsunNazwePliku("../datasets/sciezka.dat");
@@ -422,7 +422,7 @@ void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elem
             obrot_rotorow();
             zapis();
             Lacze.Rysuj();
-            usleep(15000);
+            usleep(12000);
         }
         std::cout << "Lot..." << std::endl;
         for (int i = 0; i < 50; ++i)
@@ -557,7 +557,7 @@ void dron::akcja(char wybor, std::list<std::shared_ptr<ObiektSceny>> &Lista_elem
             obrot_rotorow();
             zapis();
             Lacze.Rysuj();
-            usleep(15000);
+            usleep(12000);
         }
         Lacze.Rysuj();
     }

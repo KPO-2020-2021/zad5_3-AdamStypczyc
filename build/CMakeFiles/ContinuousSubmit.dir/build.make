@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/cmake/876/bin/cmake
+CMAKE_COMMAND = /snap/cmake/888/bin/cmake
 
 # The command to remove a file.
-RM = /snap/cmake/876/bin/cmake -E rm -f
+RM = /snap/cmake/888/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -67,7 +67,7 @@ include CMakeFiles/ContinuousSubmit.dir/compiler_depend.make
 include CMakeFiles/ContinuousSubmit.dir/progress.make
 
 CMakeFiles/ContinuousSubmit:
-	/snap/cmake/876/bin/ctest -D ContinuousSubmit
+	/snap/cmake/888/bin/ctest -D ContinuousSubmit
 
 ContinuousSubmit: CMakeFiles/ContinuousSubmit
 ContinuousSubmit: CMakeFiles/ContinuousSubmit.dir/build.make

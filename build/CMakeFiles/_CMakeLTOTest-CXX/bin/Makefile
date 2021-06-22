@@ -51,10 +51,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/cmake/876/bin/cmake
+CMAKE_COMMAND = /snap/cmake/888/bin/cmake
 
 # The command to remove a file.
-RM = /snap/cmake/876/bin/cmake -E rm -f
+RM = /snap/cmake/888/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /home/adam/zad5_3-AdamStypczyc/build/CMakeFiles/_CMakeLTOTest
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@echo "Running CMake to regenerate build system..."
-	/snap/cmake/876/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/cmake/888/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -81,7 +81,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@echo "Running CMake cache editor..."
-	/snap/cmake/876/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/cmake/888/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache

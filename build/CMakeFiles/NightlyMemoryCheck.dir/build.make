@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/cmake/876/bin/cmake
+CMAKE_COMMAND = /snap/cmake/888/bin/cmake
 
 # The command to remove a file.
-RM = /snap/cmake/876/bin/cmake -E rm -f
+RM = /snap/cmake/888/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -67,7 +67,7 @@ include CMakeFiles/NightlyMemoryCheck.dir/compiler_depend.make
 include CMakeFiles/NightlyMemoryCheck.dir/progress.make
 
 CMakeFiles/NightlyMemoryCheck:
-	/snap/cmake/876/bin/ctest -D NightlyMemoryCheck
+	/snap/cmake/888/bin/ctest -D NightlyMemoryCheck
 
 NightlyMemoryCheck: CMakeFiles/NightlyMemoryCheck
 NightlyMemoryCheck: CMakeFiles/NightlyMemoryCheck.dir/build.make

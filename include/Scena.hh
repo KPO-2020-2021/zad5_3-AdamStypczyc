@@ -278,6 +278,7 @@ bool Scena::dzialanie()
             {
                 std::cout << "Wpisz 1, 2, 3 lub 4" << std::endl;
                 std::cin >> numer;
+                bool kolizja = false;
                 if (std::cin.good())
                 {
                     if (numer == 1 || numer == 2 || numer == 3 || numer == 4)
@@ -285,6 +286,7 @@ bool Scena::dzialanie()
                         double tab[3];
                         if (numer == 1)
                         {
+
                             std::cout << "Podaj wymiary Plaskowyżu" << std::endl;
                             std::cout << "Podaj skale wzdłóż osi x,y,z\nPodana skala będzie pomnożona razy 2" << std::endl;
                             while (1)
@@ -373,6 +375,7 @@ bool Scena::dzialanie()
                             start = Wektor3D({tab1[0], tab1[1], tab1[2]});
 
                             Elementy_powierzchni.push_front(std::make_shared<Plaskowyz>(start, tab[0], tab[1], tab[2], "../datasets/Elementy_powierzchni_plasko" + std::to_string(index_elementu_plasko) + ".dat"));
+
                             std::list<std::shared_ptr<ObiektSceny>>::const_iterator j = Elementy_powierzchni.begin();
                             (*j)->zapis();
                             Lacze.DodajNazwePliku((*j)->pokaz_nazwa().c_str());
@@ -468,6 +471,7 @@ bool Scena::dzialanie()
                             start = Wektor3D({tab1[0], tab1[1], tab1[2]});
 
                             Elementy_powierzchni.push_front(std::make_shared<Ostroslup>(start, tab[0], tab[1], tab[2], "../datasets/Elementy_powierzchni_ostr" + std::to_string(index_elementu_ostr) + ".dat"));
+
                             std::list<std::shared_ptr<ObiektSceny>>::const_iterator j = Elementy_powierzchni.begin();
                             (*j)->zapis();
                             Lacze.DodajNazwePliku((*j)->pokaz_nazwa().c_str());
@@ -475,6 +479,7 @@ bool Scena::dzialanie()
                         }
                         else if (numer == 3)
                         {
+
                             std::cout << "Podaj wymiary Skarpy" << std::endl;
                             std::cout << "Podaj skale wzdłóż osi x,y,z\nPodana skala będzie pomnożona razy 2" << std::endl;
                             while (1)
@@ -563,6 +568,7 @@ bool Scena::dzialanie()
                             start = Wektor3D({tab1[0], tab1[1], tab1[2]});
 
                             Elementy_powierzchni.push_front(std::make_shared<Skarpa>(start, tab[0], tab[1], tab[2], "../datasets/Elementy_powierzchni_skr" + std::to_string(index_elementu_skr) + ".dat"));
+
                             std::list<std::shared_ptr<ObiektSceny>>::const_iterator j = Elementy_powierzchni.begin();
                             (*j)->zapis();
                             Lacze.DodajNazwePliku((*j)->pokaz_nazwa().c_str());
@@ -570,39 +576,74 @@ bool Scena::dzialanie()
                         }
                         else if (numer == 4)
                         {
-                            double tab[3];
-                            std::cout << "Wybierz miejsce startowe drona\nx,y" << std::endl;
                             while (1)
                             {
-                                std::cin >> tab[0];
-                                if (std::cin.good())
+                                kolizja = false;
+                                double tab[3];
+                                std::cout << "Wybierz miejsce startowe drona\nx,y" << std::endl;
+                                while (1)
                                 {
-                                    break;
+                                    std::cin >> tab[0];
+                                    if (std::cin.good())
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        std::cout << "Podana liczba nie była liczbą :0\nPodaj wartość jeszcze raz" << std::endl;
+                                        std::cin.clear();
+                                        std::cin.ignore(1024, '\n');
+                                    }
+                                }
+                                while (1)
+                                {
+                                    std::cin >> tab[1];
+                                    if (std::cin.good())
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        std::cout << "Podana liczba nie była liczbą :0\nPodaj wartość jeszcze raz" << std::endl;
+                                        std::cin.clear();
+                                        std::cin.ignore(1024, '\n');
+                                    }
+                                }
+                                tab[2] = 15;
+                                Wektor3D start = Wektor3D({tab[0], tab[1], tab[2]});
+                                
+                                Lst_dronow.push_front(std::make_shared<dron>(index_drona, Lacze, start));
+
+                                for (std::list<std::shared_ptr<ObiektSceny>>::const_iterator i = Elementy_powierzchni.begin(); i != Elementy_powierzchni.end(); ++i)
+                                {
+                                    if ((*Lst_dronow.begin())->sprawdz_czy_kolizja((*i)))
+                                    {
+                                        kolizja = true;
+                                    }
+                                    else
+                                    {
+                                    }
+                                }
+                                for (std::list<std::shared_ptr<dron>>::const_iterator i = Lst_dronow.begin(); i != Lst_dronow.end(); ++i)
+                                {
+                                    if ((*Lst_dronow.begin())->sprawdz_czy_kolizja((*i)))
+                                    {
+                                        kolizja = true;
+                                    }
+                                    else
+                                    {
+                                    }
+                                }
+                                if (kolizja)
+                                {
+                                    std::cout << "Zmień położenie swojego drona, ponieważ koliduje on z innymi obiektami :0\nPodaj współrzędne środka jeszcze raz" << std::endl;
+                                    Lst_dronow.erase(Lst_dronow.begin());
                                 }
                                 else
                                 {
-                                    std::cout << "Podana liczba nie była liczbą :0\nPodaj wartość jeszcze raz" << std::endl;
-                                    std::cin.clear();
-                                    std::cin.ignore(1024, '\n');
-                                }
-                            }
-                            while (1)
-                            {
-                                std::cin >> tab[1];
-                                if (std::cin.good())
-                                {
                                     break;
                                 }
-                                else
-                                {
-                                    std::cout << "Podana liczba nie była liczbą :0\nPodaj wartość jeszcze raz" << std::endl;
-                                    std::cin.clear();
-                                    std::cin.ignore(1024, '\n');
-                                }
                             }
-                            tab[2] = 15;
-                            Wektor3D start = Wektor3D({tab[0], tab[1], tab[2]});
-                            Lst_dronow.push_front(std::make_shared<dron>(index_drona, Lacze, start));
                             (*Lst_dronow.begin())->zapis();
                             index_drona++;
                         }
